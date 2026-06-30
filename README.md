@@ -42,3 +42,26 @@ graph-based-escape-route-optimizer/
 │   └── test_escape_route.py
 ├── .gitignore
 └── README.md
+
+## Example Usage
+
+```python
+from src import TreeMap
+
+roads = [
+    (0, 1, 4),
+    (1, 2, 3),
+    (2, 3, 5),
+    (0, 3, 15),
+]
+
+solulus = [
+    (1, 2, 2),
+]
+
+tree_map = TreeMap(roads, solulus)
+print(tree_map.escape(start=0, exits=[3]))
+
+Output: 
+
+(11, [0, 1, 2, 3])
