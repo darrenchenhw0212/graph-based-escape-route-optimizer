@@ -1,4 +1,4 @@
-from src import TreeMap
+from src import EscapeRouteOptimizer
 
 roads = [
     (0, 1, 4),
@@ -11,7 +11,7 @@ solulus = [
     (1, 2, 2),
 ]
 
-tree_map = TreeMap(roads, solulus)
+tree_map = EscapeRouteOptimizer(roads, solulus)
 result = tree_map.escape(start=0, exits=[3])
 
 print(result)

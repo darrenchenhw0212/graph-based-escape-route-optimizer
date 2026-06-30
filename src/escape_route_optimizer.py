@@ -1,7 +1,7 @@
 from .graph import Graph
 from .edge import Edge
 
-class TreeMap:
+class EscapeRouteOptimizer:
 
     def __init__(self, roads, solulus):
 
