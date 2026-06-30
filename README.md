@@ -6,7 +6,7 @@ A Python implementation of a graph-based pathfinding engine that computes the op
 
 ## Overview
 
-This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (Solulus) with unique traversal behaviour, the algorithm determines the minimum-cost escape path while satisfying all problem constraints.
+This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (Teleportation nodes) with unique traversal behaviour, the algorithm determines the minimum-cost escape path while satisfying all problem constraints.
 
 ---
 
@@ -81,11 +81,11 @@ roads = [
     (0, 3, 15),
 ]
 
-solulus = [
+teleportation_node = [
     (1, 2, 2),
 ]
 
-escape_route = EscapeRouteOptimizer(roads, solulus)
+escape_route = EscapeRouteOptimizer(roads, teleportation_node)
 
 time_required, path = escape_route.escape(
     start=0,
