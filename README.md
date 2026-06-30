@@ -58,7 +58,7 @@ graph-based-escape-route-optimizer/
 │   ├── vertex.py
 │   ├── heap.py
 │   ├── graph.py
-│   └── treemap.py
+│   └── escape_route_optimizer.py
 │
 ├── tests/
 │   └── test_escape_route.py
@@ -72,7 +72,7 @@ graph-based-escape-route-optimizer/
 ## Example Usage
 
 ```python
-from src import TreeMap
+from src import EscapeRouteOptimizer
 
 roads = [
     (0, 1, 4),
@@ -85,9 +85,9 @@ solulus = [
     (1, 2, 2),
 ]
 
-tree_map = TreeMap(roads, solulus)
+escape_route = EscapeRouteOptimizer(roads, solulus)
 
-time_required, path = tree_map.escape(
+time_required, path = escape_route.escape(
     start=0,
     exits=[3]
 )
