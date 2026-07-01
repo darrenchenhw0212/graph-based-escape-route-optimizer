@@ -83,8 +83,6 @@ graph-based-escape-route-optimizer/
 
 ---
 
----
-
 ## Assumptions
 
 The implementation assumes the following conditions hold:
