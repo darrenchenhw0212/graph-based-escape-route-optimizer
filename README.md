@@ -1,12 +1,22 @@
 # Graph-Based Escape Route Optimizer
 
-A Python implementation of a graph-based pathfinding engine that computes the optimal escape route using Dijkstra's shortest path algorithm. The project features custom graph data structures, a binary min-heap priority queue, and efficient path reconstruction.
+A Python implementation of a graph-based shortest path optimisation engine that computes the optimal escape route using Dijkstra's shortest path algorithm. The project features custom graph data structures, a binary min-heap priority queue, and efficient path reconstruction.
 
 ---
 
 ## Overview
 
-This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (Teleportation nodes) with unique traversal behaviour, the algorithm determines the minimum-cost escape path while satisfying all problem constraints.
+This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (teleportation nodes) with unique traversal behaviour, the algorithm determines the minimum-cost escape path while satisfying all problem constraints.
+
+Unlike a traditional shortest-path problem, a valid escape requires activating exactly one teleportation node before reaching an exit. This additional constraint transforms the problem into a more interesting pathfinding challenge, requiring the algorithm to optimise both travel cost and teleportation decisions.
+
+---
+
+## Example Graph
+
+![Example Graph](images/dijkstra_example.svg)
+
+**Figure 1.** Example directed weighted graph illustrating how the algorithm computes the shortest valid escape route by activating one teleportation node before reaching the exit.
 
 ---
 
@@ -16,7 +26,7 @@ This project models a weighted directed graph representing a forest escape scena
 - Custom `Graph`, `Vertex`, `Edge`, and `MinHeap` data structures
 - Dijkstra's shortest path algorithm
 - Efficient shortest-path reconstruction
-- Support for special intermediate nodes with additional traversal constraints
+- Support for teleportation nodes with additional traversal constraints
 - Modular object-oriented architecture
 
 ---
@@ -36,7 +46,7 @@ This project models a weighted directed graph representing a forest escape scena
 Let **V** denote the number of vertices and **E** denote the number of edges.
 
 | Operation | Complexity |
-|----------|------------|
+| :--- | :---: |
 | Graph Construction | **O(V + E)** |
 | Dijkstra's Algorithm | **O(E log V)** |
 | Space Complexity | **O(V + E)** |
@@ -52,6 +62,9 @@ graph-based-escape-route-optimizer/
 │   ├── __init__.py
 │   └── example_usage.py
 │
+├── images/
+│   └── dijkstra_example.svg
+│
 ├── src/
 │   ├── __init__.py
 │   ├── edge.py
@@ -63,6 +76,7 @@ graph-based-escape-route-optimizer/
 ├── tests/
 │   └── test_escape_route.py
 │
+├── LICENSE
 ├── README.md
 └── .gitignore
 ```
@@ -81,13 +95,13 @@ roads = [
     (0, 3, 15),
 ]
 
-teleportation_node = [
+teleportation_nodes = [
     (1, 2, 2),
 ]
 
-escape_route = EscapeRouteOptimizer(roads, teleportation_node)
+optimizer = EscapeRouteOptimizer(roads, teleportation_nodes)
 
-time_required, path = escape_route.escape(
+time_required, path = optimizer.escape(
     start=0,
     exits=[3]
 )
@@ -109,7 +123,7 @@ print(path)
 
 - Graph modelling
 - Shortest path optimisation
-- Priority queue implementation
+- Custom priority queue implementation
 - Object-oriented software design
 - Complexity analysis
 - Algorithm implementation
