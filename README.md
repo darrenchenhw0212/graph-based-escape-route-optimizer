@@ -83,6 +83,19 @@ graph-based-escape-route-optimizer/
 
 ---
 
+---
+
+## Assumptions
+
+The implementation assumes the following conditions hold:
+
+- All node identifiers referenced in `start`, `exits`, `roads`, and `teleportation_nodes` exist within the graph.
+- Edge weights and teleportation activation costs are non-negative, satisfying the requirements of Dijkstra's shortest path algorithm.
+- A valid escape route must activate exactly one teleportation node before reaching an exit.
+- The graph is static during execution; edge weights and teleportation nodes do not change while computing the escape route.
+
+---
+
 ## Example Usage
 
 ```python
@@ -113,6 +126,21 @@ time_required, path = optimizer.escape(
 print("Time required:", time_required)
 print("Path:", path)
 ```
+---
+
+## Testing
+
+The project includes unit tests covering representative escape scenarios, including:
+
+- Standard shortest-path computation using the example graph
+- Validation that an escape route must activate a teleportation node
+- Detection of scenarios where no valid escape route exists
+
+Run the test suite with:
+
+```bash
+python -m pytest -v
+```
 
 **Output**
 
@@ -134,7 +162,10 @@ print("Path:", path)
 
 ## Future Improvements
 
-- Support A* search for heuristic pathfinding
-- Add visualization of explored nodes
-- Support undirected graphs
-- Benchmark against NetworkX implementations
+Potential extensions to this project include:
+
+- Add input validation and descriptive exceptions for malformed graphs or invalid node identifiers.
+- Support multiple teleportation node activations within a single escape route.
+- Implement A* search for heuristic-based pathfinding on large-scale graphs.
+- Add graph visualization to illustrate explored nodes and computed shortest paths.
+- Benchmark performance against established graph libraries such as NetworkX.
