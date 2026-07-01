@@ -5,11 +5,11 @@ A Python implementation of a graph-based shortest path optimisation engine that 
 ---
 
 ## Overview
+This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (teleportation nodes), the algorithm computes the minimum-cost escape route while satisfying all problem constraints.
 
-This project models a weighted directed graph representing a forest escape scenario. Given a starting location, multiple possible exits, and special intermediate nodes (teleportation nodes) with unique traversal behaviour, the algorithm determines the minimum-cost escape path while satisfying all problem constraints.
+Unlike a conventional shortest-path problem, a valid escape requires activating exactly one teleportation node before reaching an exit. Activating a teleportation node incurs an additional cost and immediately transfers the traveller to another location, introducing a state transition that must be considered during pathfinding.
 
-Unlike a traditional shortest-path problem, a valid escape requires activating exactly one teleportation node before reaching an exit. This additional constraint transforms the problem into a more interesting pathfinding challenge, requiring the algorithm to optimise both travel cost and teleportation decisions.
-
+The primary challenge of this project lies in modelling these constraints rather than implementing Dijkstra's algorithm itself. By representing teleportation as additional graph transitions, the constrained escape problem can be solved using a standard shortest-path algorithm while preserving an overall time complexity of **O(E log V)**.
 ---
 
 ## Example Graph
