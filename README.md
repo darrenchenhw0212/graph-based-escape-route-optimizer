@@ -140,15 +140,17 @@ print("Path:", path)
 
 The project includes unit tests covering representative escape scenarios, including:
 
-- Standard shortest-path computation using the example graph
-- Validation that an escape route must activate a teleportation node
-- Detection of scenarios where no valid escape route exists
+- Standard shortest-path computation using the README example graph
+- Validation that a direct exit route is invalid without activating a teleportation node
+- Detection of cases where no valid escape route exists because teleportation is unreachable
+- Teleporting directly to an exit
+- Choosing the globally optimal route among multiple teleportation nodes
+- Reusing the same optimizer instance across multiple escape queries
 
 Run the test suite with:
 
 ```bash
 python -m pytest -v
-```
 
 ---
 
