@@ -10,6 +10,7 @@ This project models a weighted directed graph representing a forest escape scena
 Unlike a conventional shortest-path problem, a valid escape requires activating exactly one teleportation node before reaching an exit. Activating a teleportation node incurs an additional cost and immediately transfers the traveller to another location, introducing a state transition that must be considered during pathfinding.
 
 The primary challenge of this project lies in modelling these constraints rather than implementing Dijkstra's algorithm itself. By representing teleportation as additional graph transitions, the constrained escape problem can be solved using a standard shortest-path algorithm while preserving an overall time complexity of **O(E log V)**.
+
 ---
 
 ## Example Graph
