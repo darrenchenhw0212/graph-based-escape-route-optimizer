@@ -60,7 +60,7 @@ Let **V** denote the number of vertices and **E** denote the number of edges.
 graph-based-escape-route-optimizer/
 │
 ├── archive/
-│   └── full_code_archieve.py
+│   └── full_code_archive.py
 |
 ├── examples/
 │   └── example_usage.py
