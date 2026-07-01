@@ -58,8 +58,10 @@ Let **V** denote the number of vertices and **E** denote the number of edges.
 ```text
 graph-based-escape-route-optimizer/
 │
+├── archive/
+│   └── full_code_archieve.py
+|
 ├── examples/
-│   ├── __init__.py
 │   └── example_usage.py
 │
 ├── images/
