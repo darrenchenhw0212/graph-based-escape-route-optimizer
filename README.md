@@ -124,6 +124,13 @@ time_required, path = optimizer.escape(
 print("Time required:", time_required)
 print("Path:", path)
 ```
+
+**Output**
+
+```text
+10
+[0, 1, 2, 4, 5]
+```
 ---
 
 ## Testing
@@ -138,13 +145,6 @@ Run the test suite with:
 
 ```bash
 python -m pytest -v
-```
-
-**Output**
-
-```text
-10
-[0, 1, 2, 4, 5]
 ```
 
 ---
