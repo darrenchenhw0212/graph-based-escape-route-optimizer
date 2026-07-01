@@ -34,7 +34,7 @@ Unlike a traditional shortest-path problem, a valid escape requires activating e
 ## Technologies
 
 - Python
-- Graph Algorithms
+- Graph Theory
 - Dijkstra's Algorithm
 - Binary Min Heap
 - Object-Oriented Programming (OOP)
@@ -127,7 +127,14 @@ print("Path:", path)
 
 - Graph modelling
 - Shortest path optimisation
-- Custom priority queue implementation
-- Object-oriented software design
+- Custom data structure (priority queue) implementation
+- Object-oriented software engineering
 - Complexity analysis
-- Algorithm implementation
+- Algorithm design
+
+## Future Improvements
+
+- Support A* search for heuristic pathfinding
+- Add visualization of explored nodes
+- Support undirected graphs
+- Benchmark against NetworkX implementations
